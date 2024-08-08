@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  test-pod:
+    image: charans97/aggrigator:v4
+   # ports:
+    #  - "8000:8000"  # Expose port 8080 on the host to port 8080 in the container
+#    environment:
+ #     - THROUGHPUT=250
+  #    - BOOTSTRAP_SERVERS=localhost:9092
+    # Optionally, you can also set volume mounts, networks, etc.
+    volumes:
+      - ./:/app/configs
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    external: true
